@@ -1,20 +1,19 @@
-# Title of your project
+# Extraction of instantaneous frequencies using Synchrosqueezing in Python
 
-Brief description of your project, indicating its goal
+The project main goal is to use the Synchrosqueezing method to analyse and extract instantaneous frequencies of signals that have variable frequencies over time.
 
 # Basic information about the project
 
-Main paper / reference: full reference
+On the extraction of instantaneous frequencies from ridges in time-frequency representations of signals / Iatsenko, Dmytro, Peter VE McClintock, and Aneta Stefanovska. "On the extraction of instantaneous frequencies from ridges in time-frequency representations of signals." arXiv preprint arXiv:1310.7276 (2013).
 
 Main dataset: full reference to the dataset (name, URL, etc.)
 
-Original code: 
-
-Language: Jupyter notebook in Python or Matlab etc (include version, etc)
+Original code: https://github.com/overlordgolddragon/ssqueezepy
+Language: Python 3.10.4
 
 # Installation
 
-Instructions for installing
+pip install ssqueezepy
 
 # Executing / performing basic analysis
 
@@ -22,7 +21,7 @@ Provide information on how to execute the main code, how to obtain results, etc.
 
 # Credits
 
-date - your name - your github URL
+14/06/2022 - Wilson Antonio Cosmo Macedo - https://github.com/WCosmo
 
 # References
 
