@@ -1,6 +1,6 @@
-# Title of your project
+# Voice Conversion Using Speech-to-Speech Neuro-Style Transfer
 
-Brief description of your project, indicating its goal
+The paper introduce a deep learning-based aprroach to do voice conversion with speech style transfer across different speakers.
 
 # Basic information about the project
 
@@ -10,7 +10,7 @@ Main dataset: full reference to the dataset (name, URL, etc.)
 
 Original code: 
 
-Language: Jupyter notebook in Python or Matlab etc (include version, etc)
+Language: Python 
 
 # Installation
 
@@ -22,7 +22,7 @@ Provide information on how to execute the main code, how to obtain results, etc.
 
 # Credits
 
-date - your name - your github URL
+14/06/2022 - Tatiane Ferraz Balbinot - your github URL
 
 # References
 
