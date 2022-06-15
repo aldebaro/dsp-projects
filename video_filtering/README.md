@@ -6,7 +6,9 @@ Video deblurring is a challenging task due to the spatially variant blur caused 
 
 Main paper / reference: Zhou, S., Zhang, J., Pan, J., Xie, H., Zuo, W., & Ren, J. (2019). Spatio-temporal filter adaptive network for video deblurring. In Proceedings of the IEEE/CVF International Conference on Computer Vision (pp. 2482-2491).
 
-Main dataset: https://paperswithcode.com/paper/spatio-temporal-filter-adaptive-network-for
+Main dataset: S. Su, M. Delbracio, J. Wang, G. Sapiro, W. Heidrich, and
+O. Wang. Deep video deblurring for hand-held cameras. In
+CVPR, 2017
 
 Original code: https://github.com/sczhou/STFAN
 
