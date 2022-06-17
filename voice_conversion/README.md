@@ -1,14 +1,14 @@
 # Voice Conversion Using Speech-to-Speech Neuro-Style Transfer
 
-The paper introduce a deep learning-based aprroach to do voice conversion with speech style transfer across different speakers.
+The paper goal its present a new voice conversion method based on a neural style transfer model of the mel-spectrogram.
 
 # Basic information about the project
 
-Main paper / reference: full reference
+Main paper / reference: Ehab A. AlBadawy, Siwei Lyu, <"Voice Conversion Using Speech-to-Speech Neuro-Style Transfer">, University at Albany, SUNY, USA
 
-Main dataset: full reference to the dataset (name, URL, etc.)
+Main dataset: [(https://groups.csail.mit.edu/sls/downloads/flickraudio/downloads.cgi)]
 
-Original code: 
+Original code: https://github.com/ebadawy/voice_conversion
 
 Language: Python 
 
