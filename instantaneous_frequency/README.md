@@ -9,7 +9,10 @@ On the extraction of instantaneous frequencies from ridges in time-frequency rep
 Main dataset: full reference to the dataset (name, URL, etc.)
 
 Original code: https://github.com/overlordgolddragon/ssqueezepy
+
 Language: Python 3.10.4
+
+Slide: https://docs.google.com/presentation/d/1qAXeufXGHlVJIEs1QKkt1ekBwBRU68T4HACOPWm_Fts/edit?usp=sharing
 
 # Installation
 
