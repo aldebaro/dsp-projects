@@ -15,7 +15,9 @@ Language: Python
 # Installation
 
 pip install librosa
+
 pip install tqdm
+
 pip install webrtcvad
 
 # Executing / performing basic analysis
