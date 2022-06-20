@@ -10,7 +10,9 @@ Main dataset: MIT-BIH Arrhythmia Database available at: https://physionet.org/co
 
 Original code: https://github.com/physhik/ecg-mit-bih
 
-Language: Python 3
+Language: Python3
+
+Slide: https://docs.google.com/presentation/d/1z3Sb4xVYEOk6fhB9vtsaUwbogzc4K8G5f5dTTfcNSDQ/edit?usp=sharing
 
 # Dependency
 
@@ -40,7 +42,7 @@ $ virtualenv venv_ecg
 $ source venv_ecg/bin/activate
 (venv_ecg) $ git clone https://github.com/aldebaro/dsp-projects.git
 (venv_ecg) $ cd ecg_mitbih_classification/
-(venv_ecg) $ pip install -r requrirements.txt
+(venv_ecg) $ pip install -r requirements.txt
 (venv_ecg) $ python src/data.py --downloading True
 (venv_ecg) $ python src/train.py
 ```
