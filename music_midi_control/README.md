@@ -18,7 +18,7 @@ Main dataset: Creating a multi-track classical music performance dataset for mul
 
 Original code: https://github.com/magenta/midi-ddsp
 
-Language: Jupyter notebook in Python or Matlab etc (include version, etc)
+Language: Python
 
 # Installation
 
