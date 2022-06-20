@@ -34,8 +34,10 @@ Also, you need to run the next cells with the CPU instead of CUDA, so you have t
 
 # Credits
 
-date - your name - your github URL
+06/20/2022 - Marcos Davi Lima da Silva - https://github.com/marcossilva1309
 
 # References
 
-The main references you used
+Sparse time-frequency representations by Timothy J. Gardner and Marcelo O. Magnasco / reference: T. J. Gardner and M. O. Magnasco, "Sparse time-frequency representations", Proc. Nat. Acad. Sci. USA, vol. 103, no. 16, pp. 6094-6099, 2006.
+
+Patterson RD. A pulse ribbon model of monaural phase perception. J Acoust Soc Am. 1987 Nov;82(5):1560-86. doi: 10.1121/1.395146. PMID: 3693696.
