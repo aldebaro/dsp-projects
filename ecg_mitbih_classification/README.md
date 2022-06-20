@@ -43,6 +43,7 @@ $ source venv_ecg/bin/activate
 (venv_ecg) $ pip install -r requrirements.txt
 (venv_ecg) $ python src/data.py --downloading True
 (venv_ecg) $ python src/train.py
+```
 
 # Credits
 
