@@ -6,7 +6,7 @@ Analyze and reconstruct sparse time-frequency signals that are added to dense si
 
 Main paper: Sparse time-frequency representations by Timothy J. Gardner and Marcelo O. Magnasco / reference: T. J. Gardner and M. O. Magnasco, "Sparse time-frequency representations", Proc. Nat. Acad. Sci. USA, vol. 103, no. 16, pp. 6094-6099, 2006.
 
-Main dataset: full reference to the dataset (name, URL, etc.)
+Main dataset: https://github.com/earthspecies/spectral_hyperresolution/tree/main/data
 
 Original code: https://github.com/earthspecies/spectral_hyperresolution.
 
@@ -14,11 +14,23 @@ Language: Jupyter notebook in Python and Matlab.
 
 # Installation
 
-Instructions for installing
+It is necessary to install the following packages in order to run the code next:
+
+`pip install librosa`
+
+`pip3 install torch torchvision torchaudio`
+
+`pip install git+https://github.com/earthspecies/spectral_hyperresolution.git@main`
 
 # Executing / performing basic analysis
 
-Provide information on how to execute the main code, how to obtain results, etc. Provide the name of the main scripts.
+### Steps to run the code present at: https://github.com/earthspecies/spectral_hyperresolution
+
+To run the main file (linear_reassignment_overview), it is necessary to make some changes in the code, which are listed below:
+
+The last line command of cell 4 should be changed from "waveplot" to "waveshow".
+
+Also, you need to run the next cells with the CPU instead of CUDA, so you have to change the last parameter of the last row from cell eight onwards to 'cpu'.
 
 # Credits
 
