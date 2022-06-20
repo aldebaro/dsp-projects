@@ -12,6 +12,8 @@ Original code: https://github.com/earthspecies/spectral_hyperresolution.
 
 Language: Jupyter notebook in Python and Matlab.
 
+Link to slides: https://docs.google.com/presentation/d/1-CIlU9wCmOhtC4grihvUbIT2FLDIvwCmZCqzk-n8mV4/edit#slide=id.p
+
 # Installation
 
 It is necessary to install the following packages in order to run the code next:
