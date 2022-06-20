@@ -56,5 +56,4 @@ viz(x, Wx, ridge_idxs, scales, tt = 'CWT Ridges')
 
 # SSQ_CWT example (note the jumps)
 ridge_idxs = extract_ridges(Tx, scales, penalty, n_ridges=nr, bw=4)
-print(np.shape(ridge_idxs)) #debug
 viz(x, Tx, ridge_idxs, ssq_freqs, tt = 'CWT with SSQ Ridges')
