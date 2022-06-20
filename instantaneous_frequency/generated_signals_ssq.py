@@ -1,3 +1,9 @@
+'''
+Extraction of instantaneous frequencies with SSQ
+Test with generated signals
+Wilson Cosmo
+20/06/2022
+'''
 
 import numpy as np
 import scipy.signal as sig
