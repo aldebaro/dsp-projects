@@ -1,16 +1,16 @@
-# Title of your project
+# Digital Signal Processing for ECG Classification Using Wavelet Transform
 
 Brief description of your project, indicating its goal
 
 # Basic information about the project
 
-Main paper / reference: full reference
+Main paper / reference: Hannun, A. Y., Rajpurkar, P., Haghpanahi, M., Tison, G. H., Bourn, C., Turakhia, M. P., & Ng, A. Y. (2019). Cardiologist-level arrhythmia detection and classification in ambulatory electrocardiograms using a deep neural network. Nature medicine, 25(1), 65-69.
 
-Main dataset: full reference to the dataset (name, URL, etc.)
+Main dataset: MIT-BIH Arrhythmia Database https://physionet.org/content/mitdb/1.0.0/
 
-Original code: 
+Original code: https://github.com/physhik/ecg-mit-bih
 
-Language: Jupyter notebook in Python or Matlab etc (include version, etc)
+Language: Python 3
 
 # Installation
 
@@ -22,7 +22,7 @@ Provide information on how to execute the main code, how to obtain results, etc.
 
 # Credits
 
-date - your name - your github URL
+20/06/2022 Lucas Damasceno
 
 # References
 
