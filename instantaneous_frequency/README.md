@@ -16,7 +16,7 @@ Slide: https://docs.google.com/presentation/d/1qAXeufXGHlVJIEs1QKkt1ekBwBRU68T4H
 
 # Installation
 
-pip install ssqueezepy
+Run s_imports.py to install the libraries
 
 # Executing / performing basic analysis
 

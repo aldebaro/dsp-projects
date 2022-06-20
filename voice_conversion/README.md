@@ -10,6 +10,8 @@ Main dataset: [(https://groups.csail.mit.edu/sls/downloads/flickraudio/downloads
 
 Original code: https://github.com/ebadawy/voice_conversion
 
+slide: https://docs.google.com/presentation/d/1pgDC-qwCtOGZSIG5tjIRUbSUCfo6EeyqRD-j7djDP5E/edit#slide=id.g13331885fbe_0_5
+
 Language: Python 
 
 # Installation
