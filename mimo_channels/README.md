@@ -23,9 +23,11 @@ Slide: https://docs.google.com/presentation/d/1z3Sb4xVYEOk6fhB9vtsaUwbogzc4K8G5f
 
 # Installation
 
+```
 git clone https://github.com/aldebaro/dsp-projects.git
 cd mimo_channels/
 pip install -r Requirements.txt
+```
 
 # Executing
 
