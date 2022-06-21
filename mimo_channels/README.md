@@ -4,26 +4,37 @@ Brief description of your project, indicating its goal
 
 # Basic information about the project
 
-Main paper / reference: full reference
+Main paper / reference: E. Endovitskiy, A. Kureev and E. Khorov, "Reducing Computational Complexity for the 3GPP TR 38.901 MIMO Channel Model," in IEEE Wireless Communications Letters, vol. 11, no. 6, pp. 1133-1136, June 2022, doi: 10.1109/LWC.2022.3158095.
 
-Main dataset: full reference to the dataset (name, URL, etc.)
+Main dataset:
 
 Original code: 
 
-Language: Jupyter notebook in Python or Matlab etc (include version, etc)
+Language: Python3 and Matlab
+
+Slide: https://docs.google.com/presentation/d/1z3Sb4xVYEOk6fhB9vtsaUwbogzc4K8G5f5dTTfcNSDQ/edit?usp=sharing
+
+# Dependency
+
+* Python >= 3.8.3
+* pip >= 22.0.4
+* numpy >= 1.21.6
+* matplotlib >= 3.4.2
 
 # Installation
 
-Instructions for installing
+git clone https://github.com/aldebaro/dsp-projects.git
+cd mimo_channels/
+pip install -r Requirements.txt
 
-# Executing / performing basic analysis
+# Executing
 
-Provide information on how to execute the main code, how to obtain results, etc. Provide the name of the main scripts.
+python ULA.py
 
 # Credits
 
-date - your name - your github URL
+20/06/2022 - Lucas Shibata
 
 # References
 
-The main references you used
+TSE, D.; VISWANATH, P. Fundamentals of Wireless Communication. Cambridge University Press, 2004.
