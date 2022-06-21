@@ -12,11 +12,27 @@ CVPR, 2017
 
 Original code: https://github.com/sczhou/STFAN
 
-Language: Python3
+Presentation: https://docs.google.com/presentation/d/1Q2avz-cBu1ZRE-a1_5_q5r9vadDUllwLzdyUWvbtq0I/edit?usp=sharing
+
+Language: Python2
 
 # Installation
 
 Instructions for installing
+
+CUDA 8.0/9.0/10.0
+gcc 4.9+
+Python 2.7
+PyTorch 1.0+
+easydict
+enum34
+matplotlib
+scipy
+opencv-python==4.2.0.32
+
+
+
+
 
 # Executing / performing basic analysis
 
