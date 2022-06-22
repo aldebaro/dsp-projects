@@ -23,8 +23,8 @@ Run setup.py to install the libraries and the test dataset.
 # Executing / performing basic analysis
 
 - The "ridge_generated_signals_ssq.py" script runs ridge extraction for a generated signal based in a sum of three senoids with defined frequencies. 
-- The "ridge_visualization_only.py" 
-- The "ridge_with_ground_truth.py" 
+- The "ridge_visualization_only.py" script runs ridge extraction and vizualization from a loaded signal. Parameters: --sfile signal_file --t file_type --penalty penalty --nridges number_of_ridges
+- The "ridge_with_ground_truth.py" script runs ridge extraction and vizualization from a loaded signal, and perform mse based in a given ground truth. Parameters: --sfile signal_file --t file_type --penalty penalty --nridges number_of_ridges
 
 # Credits
 
