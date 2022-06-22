@@ -6,7 +6,9 @@ The project main goal is to use the Synchrosqueezing method to analyse and extra
 
 On the extraction of instantaneous frequencies from ridges in time-frequency representations of signals / Iatsenko, Dmytro, Peter VE McClintock, and Aneta Stefanovska. "On the extraction of instantaneous frequencies from ridges in time-frequency representations of signals." arXiv preprint arXiv:1310.7276 (2013).
 
-Main dataset: full reference to the dataset (name, URL, etc.)
+Main datasets: 
+- A Replication Dataset for Fundamental Frequency Estimation, url: https://zenodo.org/record/3904389#.YrNVLv3MLIU
+- Sanctuary Soundscape Monitoring Project (SanctSound), url: https://sanctsound.ioos.us/sounds.html#dolphins-channel-islands
 
 Original code: https://github.com/overlordgolddragon/ssqueezepy
 
@@ -16,11 +18,13 @@ Slide: https://docs.google.com/presentation/d/1qAXeufXGHlVJIEs1QKkt1ekBwBRU68T4H
 
 # Installation
 
-Run s_imports.py to install the libraries
+Run setup.py to install the libraries and the test dataset.
 
 # Executing / performing basic analysis
 
-Provide information on how to execute the main code, how to obtain results, etc. Provide the name of the main scripts.
+- The "ridge_generated_signals_ssq.py" script runs ridge extraction for a generated signal based in a sum of three senoids with defined frequencies. 
+- The "ridge_visualization_only.py" 
+- The "ridge_with_ground_truth.py" 
 
 # Credits
 
