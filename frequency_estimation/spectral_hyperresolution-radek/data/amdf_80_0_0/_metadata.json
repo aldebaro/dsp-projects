@@ -1,0 +1,8 @@
+{
+  "algo": "amdf",
+  "basefrequency": 80,
+  "noise_dataset": "white noise",
+  "snr": 0,
+  "speech_dataset": "harmonic tone complex",
+  "trial": 0
+}
