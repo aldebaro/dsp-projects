@@ -6,6 +6,8 @@ Date: 22/06/2022
 
 Script description: This script plots and extracts a single ridge curve of a loaded .wav signal. The ridge extracted is evaluated with the original frequencies of the loaded signal (ground truth) using the mean squared error metric. The ridge curve is extracted are from STFT Transform and SSQ STFT.
 Input Parameters: --sf 'path_to_file.wav' --ff 'path_to_ground_truth_file.npy' --p 'penalty for frequency change'
+
+The signals generated for testing this script were generated using: https://github.com/weeping-angel/Mathematics-of-Music
 '''
 
 import numpy as np
