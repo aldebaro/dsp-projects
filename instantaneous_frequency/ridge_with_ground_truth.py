@@ -1,20 +1,30 @@
+'''
+DSP - Final Project
+Project Name: Extraction of instantaneous frequencies using Synchrosqueezing in Python
+Student: Wilson Cosmo
+Date: 22/06/2022
+
+Script description: This script plots and stracts a single ridge curve of a loaded .wav signal. The ridge extracted is evaluated with the original frequencies of the loaded signal (ground truth) using the mean squared error metric. The ridge curve is extracted are from STFT Transform and SSQ STFT.
+Input Parameters: --sf 'path_to_file.wav' --ff 'path_to_ground_truth_file.npy' --p 'penalty for frequency change'
+'''
 
 import numpy as np
 import scipy.signal as sig
 from ssqueezepy import ssq_cwt, ssq_stft, extract_ridges
 from ssqueezepy.visuals import plot, imshow
 from scipy.io import wavfile as wav
+import matplotlib.pyplot as plt
+from sklearn.metrics import mean_squared_error
 import argparse
 
 parser = argparse.ArgumentParser()
-parser.add_argument("--sfile", type=str, default='./signals/npy/synthetic_data/bana_200_-10_5/pitch.npy', help="path to the signal file")
-parser.add_argument("--t", type=str, default='npy', help="file type (wav, npy)")
-parser.add_argument("--penalty", type=int, default=6000, help="penalty for frequency change")
-parser.add_argument("--nridges", type=int, default=1, help="number of ridges")
+parser.add_argument("--sf", type=str, default='./test_signals/ground_truth/crescent_decrescent/music.wav', help="signal file")
+parser.add_argument("--ff", type=str, default='./test_signals/ground_truth/crescent_decrescent/music_f.npy', help="frequencies file - ground truth")
+parser.add_argument("--p", type=int, default=10, help="penalty for frequency change")
 opt = parser.parse_args()
 print(opt)
 
-#%%## Visual method #########################################################
+# Visual method
 def viz(x, Tf, ridge_idxs, yticks=None, tt = 'Signal', yl = 'Frequency Scale'):
     ylabel = (yl)
     title = (tt)
@@ -23,26 +33,35 @@ def viz(x, Tf, ridge_idxs, yticks=None, tt = 'Signal', yl = 'Frequency Scale'):
     imshow(Tf, **ikw, show=0)
     plot(ridge_idxs, **pkw, show=1)
 
-penalty = opt.penalty
-nr = opt.nridges #n of ridges
+# Parameters for all signals
+penalty = opt.p
+nr = 1 #n of ridges
+rf = 1 #rescaling factor
 
-#load signal
-if opt.t == 'wav':
-    (rate,sig) = wav.read(opt.sfile)
-elif opt.t == 'npy':
-    sig = np.load(opt.sfile)
-else:
-    print('File extension not supported.')
+# load signal and ground truth
+(rate,sig) = wav.read(opt.sf)
+sig_f = np.load(opt.ff)
 
+# Signal
 x = sig
-t = int(sig.size)
+t = int(x.size)
 plot(x, title="Original Signal", show=1, xlabel="Time [samples]", ylabel="Signal Amplitude [A.U.]") #plot original signal
+Tx, Wx, ssq_freqs, scales = ssq_stft(x) # STFT
 
-# CWT
-Tx, Wx, ssq_freqs, scales = ssq_cwt(x)
-ridge_idxs = extract_ridges(Wx, scales, penalty, n_ridges=nr, bw=25)
-viz(x, Wx, ridge_idxs, scales, tt = 'CWT Ridges')
+# STFT ridges
+ridge_idxs = extract_ridges(Wx, scales, penalty, n_ridges=nr, bw=25, transform='stft')
+t_ridges = np.transpose(ridge_idxs)
+rf = np.amax(sig_f)/np.amax(t_ridges)
+mse = mean_squared_error(sig_f,t_ridges[0]*rf) #mean_squared_error
+print('\nSignal - STFT ridges \nNumber of frequencies = 1')
+print('MSE for f1 = ' + str(mse))
+viz(x, Wx, ridge_idxs, scales, tt = 'STFT Ridges')
 
-# SSQ_CWT example (note the jumps)
-ridge_idxs = extract_ridges(Tx, scales, penalty, n_ridges=nr, bw=4)
-viz(x, Tx, ridge_idxs, ssq_freqs, tt = 'CWT with SSQ Ridges')
+# SSQ STFT ridges
+ridge_idxs = extract_ridges(Tx, scales, penalty, n_ridges=nr, bw=4, transform='stft')
+t_ridges = np.transpose(ridge_idxs)
+rf = np.amax(sig_f)/np.amax(t_ridges)
+mse = mean_squared_error(sig_f,t_ridges[0]*rf) #mean_squared_error
+print('\nSignal - STFT ridges (with SSQ) \nNumber of frequencies = 1')
+print('MSE for f1 = ' + str(mse))
+viz(x, Tx, ridge_idxs, ssq_freqs, tt = 'STFT with SSQ Ridges')
