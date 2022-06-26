@@ -7,10 +7,10 @@ The project main goal is to use the Synchrosqueezing method to analyse and extra
 On the extraction of instantaneous frequencies from ridges in time-frequency representations of signals / Iatsenko, Dmytro, Peter VE McClintock, and Aneta Stefanovska. "On the extraction of instantaneous frequencies from ridges in time-frequency representations of signals." arXiv preprint arXiv:1310.7276 (2013).
 
 Main datasets: 
-- A Replication Dataset for Fundamental Frequency Estimation, url: https://zenodo.org/record/3904389#.YrNVLv3MLIU
 - Sanctuary Soundscape Monitoring Project (SanctSound), url: https://sanctsound.ioos.us/sounds.html#dolphins-channel-islands
+- Musics and respective Ground Truth generated with: https://github.com/weeping-angel/Mathematics-of-Music
 
-Original code: https://github.com/overlordgolddragon/ssqueezepy
+Original source code: https://github.com/overlordgolddragon/ssqueezepy
 
 Language: Python 3.10.4
 
@@ -18,13 +18,22 @@ Slide: https://docs.google.com/presentation/d/1qAXeufXGHlVJIEs1QKkt1ekBwBRU68T4H
 
 # Installation
 
-Run setup.py to install the libraries and the test dataset.
+Run setup.py to install the libraries and the test_signals dataset.
 
 # Executing / performing basic analysis
 
-- The "ridge_generated_signals_ssq.py" script runs ridge extraction for a generated signal based in a sum of three senoids with defined frequencies. 
-- The "ridge_visualization_only.py" script runs ridge extraction and vizualization from a loaded signal. Parameters: --sfile signal_file --t file_type --penalty penalty --nridges number_of_ridges
-- The "ridge_with_ground_truth.py" script runs ridge extraction and vizualization from a loaded signal, and perform mse based in a given ground truth. Parameters: --sfile signal_file --t file_type --penalty penalty --nridges number_of_ridges
+- ridge_generated_signals_ssq.py - This script generates three cossenoid based signals, and it's respectives ground truth frequencies. Ridge curves are extracted from each signal then evaluated with the mean squared error metric.
+
+Input Parameters: --p 'penalty for frequency change'
+
+- ridge_visualization_only.py - This script plots ridge curves visualization of a loaded .wav signal.
+
+Input Parameters: --sf 'path_to_file.wav' --p 'penalty for frequency change' --nr 'number of ridges'
+
+- ridge_with_ground_truth.py - This script plots and extracts a single ridge curve of a loaded .wav signal. The ridge extracted is evaluated with the original frequencies of the loaded signal (ground truth) using the mean squared error metric.
+
+Input Parameters: --sf 'path_to_file.wav' --ff 'path_to_ground_truth_file.npy' --p 'penalty for frequency change'
+
 
 # Credits
 
