@@ -4,7 +4,7 @@ Project Name: Extraction of instantaneous frequencies using Synchrosqueezing in 
 Student: Wilson Cosmo
 Date: 22/06/2022
 
-Script description: This script plots and stracts a single ridge curve of a loaded .wav signal. The ridge extracted is evaluated with the original frequencies of the loaded signal (ground truth) using the mean squared error metric. The ridge curve is extracted are from STFT Transform and SSQ STFT.
+Script description: This script plots and extracts a single ridge curve of a loaded .wav signal. The ridge extracted is evaluated with the original frequencies of the loaded signal (ground truth) using the mean squared error metric. The ridge curve is extracted are from STFT Transform and SSQ STFT.
 Input Parameters: --sf 'path_to_file.wav' --ff 'path_to_ground_truth_file.npy' --p 'penalty for frequency change'
 '''
 
