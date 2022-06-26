@@ -18,7 +18,7 @@ Slide: https://docs.google.com/presentation/d/1qAXeufXGHlVJIEs1QKkt1ekBwBRU68T4H
 
 # Installation
 
-Run setup.py to install the libraries and the test_signals dataset.
+Run `setup.py` to install the libraries and the test_signals dataset.
 
 # Executing / performing basic analysis
 
