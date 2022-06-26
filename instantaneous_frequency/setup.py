@@ -1,5 +1,12 @@
 '''
+DSP - Final Project
+Project Name: Extraction of instantaneous frequencies using Synchrosqueezing in Python
+Student: Wilson Cosmo
+Date: 22/06/2022
+
+Script description: This script installs the libraries for the project and download a small dataset for testing.
 '''
+
 import os
 import sys
 import subprocess
