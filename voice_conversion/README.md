@@ -17,18 +17,31 @@ Language: Python
 # Installation
 
 `pip install librosa==0.8.1`
+
 `pip install matplotlib==3.4.2`
+
 `pip install numpy==1.21.1`
+
 `pip install scikit_learn==0.24.2`
+
 `pip install scipy==1.7.1`
+
 `pip install scikit-image`
+
 `pip install soundfile==0.10.3.post1`
+
 `pip install torch==1.9.0+cu111` 
-`pip install torchvision==0.10.0+cu111` 
+
+`pip install torchvision==0.10.0+cu111`
+
 `pip install torchaudio==0.9.0`
+
 `pip install tqdm==4.62.0`
+
 `pip install webrtcvad==2.0.10`
+
 `pip install nnmnkwii`
+
 `pip install matplotlib`
 
 
