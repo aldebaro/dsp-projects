@@ -86,7 +86,7 @@ Feedback: none of this possible solution worked in the present work. This librar
 
 # Credits
 
-14/06/2022 - Tatiane Ferraz Balbinot - [(https://github.com/AneBalbinot)]
+14/06/2022 - Tatiane Ferraz Balbinot - https://github.com/AneBalbinot
 
 # References
 
