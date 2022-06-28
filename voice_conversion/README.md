@@ -44,4 +44,4 @@ Main reference: https://github.com/ebadawy/voice_conversion
 
 Auxiliary reference: https://github.com/RussellSB/tt-vae-gan
 
-WaveNet VoCoder source: https://github.com/r9y9/wavenet_vocoder
+WaveNet VoCoder source: https://github.com/r9y9/wavenet_vocoder 
