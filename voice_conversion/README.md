@@ -71,7 +71,7 @@ Enviroment ready, the next step is use the preprocess/train/inference codes pres
 
 2nd case:    `sudo apt install git-all` (DEBIAN)
 
-             `pip install git+https://github.com/r9y9/nnmnkwii` 
+              pip install git+https://github.com/r9y9/nnmnkwii 
              
 3rd Case:    'pip -v --no-cache-dir install nnmnkwii`
 
