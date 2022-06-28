@@ -26,7 +26,11 @@ pip install nnmnkwii
 
 # Executing / performing basic analysis
 
-Provide information on how to execute the main code, how to obtain results, etc. Provide the name of the main scripts.
+First of all, a paper was selected from github which it has the codes in python. Downloading files were saved in .zip and uploaded on the server generated on the google cloud platform, where the debian distribution was being simulated.
+
+Use the 'unzip' command to unzip the 'voice_conversion-master' and 'wavenet_vocoder-master'
+command: unzip [name].zip
+
 
 # Credits
 
@@ -36,6 +40,6 @@ Provide information on how to execute the main code, how to obtain results, etc.
 
 Main reference: https://github.com/ebadawy/voice_conversion
 
-Followed instructions: https://github.com/RussellSB/tt-vae-gan
+Auxiliary reference: https://github.com/RussellSB/tt-vae-gan
 
 WaveNet VoCoder source: https://github.com/r9y9/wavenet_vocoder
