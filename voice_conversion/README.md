@@ -34,14 +34,14 @@ command: `unzip [name].zip`
 
 After unzipping the folders with the codes, then the dataset `flickr_audio.zip` was uploaded to the server (this might take few hours)
 
-The enviroment must be structured as follow: `flickr_audio `voice_conversion-master` `wavenet_vocoder-master`
+The enviroment must be structured as follow: `flickr_audio` `voice_conversion-master` `wavenet_vocoder-master`
 
-Enviroment ready, the next step is use the preprocess, train and inference codes present in voice_conversion-master:
+Enviroment ready, the next step is use the preprocess/train/inference codes present in voice_conversion-master:
 - Preprocess: `python preprocess.py --dataset [path/to/dataset] --test-size [float] --eval-size [float]`
 
 - Training: `python train.py --model_name [name]  --dataset [path/to/dataset] --n_cpu 4`
 
--Inference: `python inference.py --model_name [name of the model] --epoch [epoch number] --trg_id [1 or 2] --wav [path/to/source_audio.wav]` or `--wavdir path/to/audio_directory`
+- Inference: `python inference.py --model_name [name of the model] --epoch [epoch number] --trg_id [1 or 2] --wav [path/to/source_audio.wav]` or `--wavdir path/to/audio_directory`
 
 
 # Credits
