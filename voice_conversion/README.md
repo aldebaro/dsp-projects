@@ -29,8 +29,10 @@ pip install nnmnkwii
 First of all, a paper was selected from github which it has the codes in python. Downloading files were saved in .zip and uploaded on the server generated on the google cloud platform, where the debian distribution was being simulated.
 
 Use the 'unzip' command to unzip the 'voice_conversion-master' and 'wavenet_vocoder-master'
+
 command: unzip [name].zip
 
+After unzipping the folders with the codes, then the dataset flickr_audio was uploaded to the server
 
 # Credits
 
