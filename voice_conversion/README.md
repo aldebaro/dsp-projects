@@ -73,11 +73,11 @@ Enviroment ready, the next step is use the preprocess/train/inference codes pres
 
               pip install git+https://github.com/r9y9/nnmnkwii 
              
-3rd Case:    'pip -v --no-cache-dir install nnmnkwii`
+3rd Case:    `pip -v --no-cache-dir install nnmnkwii`
 
 
-4th Case:    'pip install numpy / python3 -m pip install numpy'
-             'pip install cython / python3 -m pip install cython'
+4th Case:    `pip install numpy / python3 -m pip install numpy'
+             `pip install cython / python3 -m pip install cython'
 
 5th Case:    `pip install nnmnkwii==0.1.0`
 
