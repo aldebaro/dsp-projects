@@ -22,6 +22,8 @@ pip install tqdm
 
 pip install webrtcvad
 
+pip install nnmnkwii
+
 # Executing / performing basic analysis
 
 Provide information on how to execute the main code, how to obtain results, etc. Provide the name of the main scripts.
