@@ -34,10 +34,12 @@ command: `unzip [name].zip`
 
 After unzipping the folders with the codes, then the dataset `flickr_audio.zip` was uploaded to the server (this might take few hours)
 
-The enviroment must be structured as follow: `flickr_audio `voice_conversion-maste` `wavenet_vocoder-master`
+The enviroment must be structured as follow: `flickr_audio `voice_conversion-master` `wavenet_vocoder-master`
 
-Enviroment ready, the next step is preprocessing the data:
+Enviroment ready, the next step is preprocessing the data present in voice_conversion-master:
 `python preprocess.py --dataset [path/to/dataset] --test-size [float] --eval-size [float]`
+
+
 
 
 
