@@ -32,7 +32,16 @@ Use the `unzip` command to unzip the `voice_conversion-master.zip` and `wavenet_
 
 command: `unzip [name].zip`
 
-After unzipping the folders with the codes, then the dataset `flickr_audio was uploaded` to the server
+After unzipping the folders with the codes, then the dataset `flickr_audio.zip` was uploaded to the server (this might take few hours)
+
+The enviroment must be structured as follow: `flickr_audio `voice_conversion-maste` `wavenet_vocoder-master`
+
+Enviroment ready, the next step is preprocessing the data:
+`python preprocess.py --dataset [path/to/dataset] --test-size [float] --eval-size [float]`
+
+
+
+
 
 # Credits
 
@@ -45,3 +54,5 @@ Main reference: https://github.com/ebadawy/voice_conversion
 Auxiliary reference: https://github.com/RussellSB/tt-vae-gan
 
 WaveNet VoCoder source: https://github.com/r9y9/wavenet_vocoder 
+
+Dataset: https://groups.csail.mit.edu/sls/downloads/flickraudio/downloads.cgi
