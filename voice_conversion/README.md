@@ -16,13 +16,13 @@ Language: Python
 
 # Installation
 
-pip install librosa
+`pip install librosa
 
 pip install tqdm
 
 pip install webrtcvad
 
-pip install nnmnkwii
+pip install nnmnkwii`
 
 # Executing / performing basic analysis
 
@@ -43,6 +43,20 @@ Enviroment ready, the next step is use the preprocess/train/inference codes pres
 
 - Inference: `python inference.py --model_name [name of the model] --epoch [epoch number] --trg_id [1 or 2] --wav [path/to/source_audio.wav]` or `--wavdir path/to/audio_directory`
 
+# Possible solutions if there are problems installing nnmnkwii library
+
+1st case:    `pip install nnmnkwii` or `python3 -m pip install nnmnkwii`
+
+2nd case:    `sudo apt install git-all` (DEBIAN) 
+             `pip install git+https://github.com/r9y9/nnmnkwii` 
+             
+3rd Case:    'pip -v --no-cache-dir install nnmnkwii'
+
+
+4th Case:    'pip install numpy / python3 -m pip install numpy'
+             'pip install cython / python3 -m pip install cython'
+
+5th Case:    `pip install nnmnkwii==0.1.0`
 
 # Credits
 
