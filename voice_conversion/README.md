@@ -16,13 +16,13 @@ Language: Python
 
 # Installation
 
-`pip install librosa
+pip install librosa
 
 pip install tqdm
 
 pip install webrtcvad
 
-pip install nnmnkwii`
+pip install nnmnkwii
 
 # Executing / performing basic analysis
 
@@ -47,16 +47,19 @@ Enviroment ready, the next step is use the preprocess/train/inference codes pres
 
 1st case:    `pip install nnmnkwii` or `python3 -m pip install nnmnkwii`
 
-2nd case:    `sudo apt install git-all` (DEBIAN) 
+2nd case:    `sudo apt install git-all` (DEBIAN)
+
              `pip install git+https://github.com/r9y9/nnmnkwii` 
              
-3rd Case:    'pip -v --no-cache-dir install nnmnkwii'
+3rd Case:    'pip -v --no-cache-dir install nnmnkwii`
 
 
 4th Case:    'pip install numpy / python3 -m pip install numpy'
              'pip install cython / python3 -m pip install cython'
 
 5th Case:    `pip install nnmnkwii==0.1.0`
+
+Feedback: none of this possible solution worked in the present work. This library was supposed to be used in separate wavenet training.
 
 # Credits
 
