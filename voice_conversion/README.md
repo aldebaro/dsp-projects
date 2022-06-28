@@ -76,8 +76,9 @@ Enviroment ready, the next step is use the preprocess/train/inference codes pres
 3rd Case:    `pip -v --no-cache-dir install nnmnkwii`
 
 
-4th Case:    `pip install numpy / python3 -m pip install numpy'
-             `pip install cython / python3 -m pip install cython'
+4th Case:    `pip install numpy / python3 -m pip install numpy`
+
+             `pip install cython / python3 -m pip install cython`
 
 5th Case:    `pip install nnmnkwii==0.1.0`
 
@@ -85,7 +86,7 @@ Feedback: none of this possible solution worked in the present work. This librar
 
 # Credits
 
-14/06/2022 - Tatiane Ferraz Balbinot - your github URL
+14/06/2022 - Tatiane Ferraz Balbinot - [(https://github.com/AneBalbinot)]
 
 # References
 
