@@ -34,4 +34,8 @@ Provide information on how to execute the main code, how to obtain results, etc.
 
 # References
 
-The main references you used
+Main reference: https://github.com/ebadawy/voice_conversion
+
+Followed instructions: https://github.com/RussellSB/tt-vae-gan
+
+WaveNet VoCoder source: https://github.com/r9y9/wavenet_vocoder
