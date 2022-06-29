@@ -41,4 +41,9 @@ Input Parameters: --sf 'path_to_file.wav' --ff 'path_to_ground_truth_file.npy' -
 
 # References
 
-The main references you used
+- Modal Identification of Lightweight Pedestrian Bridges based on Time-Frequency Analysis. Jansen, Andreas. 10.13140/RG.2.2.17116.54407. (2016).
+
+- On the extraction of instantaneous frequencies from ridges in time-frequency representations of signals / Iatsenko, Dmytro, Peter VE McClintock, and Aneta Stefanovska. "On the extraction of instantaneous frequencies from ridges in time-frequency representations of signals." arXiv preprint arXiv:1310.7276 (2013)
+
+- A generative model and a generalized trust region Newton method for noise reduction. Computational Optimization and Applications. Pulkkinen, Seppo & Mäkelä, Marko & Karmitsa, Napsu. 57. 129-165. 10.1007/s10589-013-9581-4. (2014).
+
