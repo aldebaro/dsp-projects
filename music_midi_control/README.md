@@ -1,23 +1,29 @@
-MIDI-DDSP: Detailed Control of Musical Performance via Hierarchical Modeling
-Implement a hierarchical generative model of musical performance to provide both realism and control. Similar to conventional synthesizers and samplers that use the MIDI standard, MIDI-DDSP converts note timing, pitch, and expression information into fine-grained parameter control of DDSP synthesizer modules. The hierarchical structure underlying the process of creating music involves a composer writing a piece as a series of notes. A performer interprets these notes through a myriad of nuanced, sub-second choices about articulation, dynamics, and expression. These expressive gestures are realized as audio through the short-time pitch and timbre changes of the physical vibration of the instrument. MIDI-DDSP is built on a similar 3-level hierarchy (notes, performance, synthesis) with interpretable representations at each level.
+# Title of your project
 
-Basic information about the project
-Main paper / reference: Wu, Y., Manilow, E., Deng, Y., Swavely, R., Kastner, K., Cooijmans, T., Courville,A., Huang, C., & Engel, J. (2021). MIDI-DDSP: Detailed control of musical performance via hierarchical modeling. arXiv preprint arXiv:2112.09312.
+Brief description of your project, indicating its goal
 
-Main dataset: Creating a multi-track classical music performance dataset for multi-modal music analysis: challenges, insights, and applications, https://datadryad.org/stash/dataset/doi:10.5061/dryad.ng3r749
+# Basic information about the project
 
-Original code: https://github.com/magenta/midi-ddsp
+Main paper / reference: full reference
+
+Main dataset: full reference to the dataset (name, URL, etc.)
+
+Original code: 
 
 Language: Jupyter notebook in Python or Matlab etc (include version, etc)
 
-Installation
+# Installation
+
 Instructions for installing
 
-Executing / performing basic analysis
+# Executing / performing basic analysis
+
 Provide information on how to execute the main code, how to obtain results, etc. Provide the name of the main scripts.
 
-Credits
-15/06/2022 Frederico Lopes https://github.com/fredhrl
+# Credits
 
-References
-Wu, Yusong, et al. "MIDI-DDSP: Detailed control of musical performance via hierarchical modeling." arXiv preprint arXiv:2112.09312 (2021).
+date - your name - your github URL
+
+# References
+
+The main references you used
