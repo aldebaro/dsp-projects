@@ -17,7 +17,7 @@ import argparse
 
 parser = argparse.ArgumentParser()
 parser.add_argument("--sf", type=str, default='./test_signals/visualization/dolphins/SanctSound_CI01_03_dolphins_20190904T064203Z.wav', help="path to the signal file")
-parser.add_argument("--p", type=int, default=60000, help="penalty for frequency change")
+parser.add_argument("--p", type=int, default=300000, help="penalty for frequency change")
 parser.add_argument("--nr", type=int, default=3, help="number of ridges")
 opt = parser.parse_args()
 print(opt)
