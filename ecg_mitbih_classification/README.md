@@ -22,7 +22,7 @@ Slide: https://docs.google.com/presentation/d/1z3Sb4xVYEOk6fhB9vtsaUwbogzc4K8G5f
 * pip >= 21.2.4
 * conda >= 4.12.0
 
-# Libraries
+## Libraries
 * keras==2.9.0
 * tensorflow==2.9.1
 * scikit-learn==1.1.1
