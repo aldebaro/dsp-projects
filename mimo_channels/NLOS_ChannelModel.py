@@ -108,7 +108,7 @@ ax = fig.add_subplot()
 
 ax.plot(np.arange(1,M+1),10*np.log10(eigenvalues_Laplace),'r--', label='Laplace')
 ax.plot(np.arange(1,M+1),10*np.log10(eigenvalues_Uniform),'b-.', label='Uniform')
-ax.plot(np.arange(1,M+1),10*np.log10(eigenvalues_Gaussian),'k', label='Location')
+ax.plot(np.arange(1,M+1),10*np.log10(eigenvalues_Gaussian),'k', label='Gaussian')
 ax.plot(np.arange(1,M+1),10*np.log10(eigenvalues_uncorr),'k:', label='Uncorrelated fading')
 
 ax.set_xlabel('Eigenvalue number in decreasing order')

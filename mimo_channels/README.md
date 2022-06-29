@@ -8,7 +8,7 @@ Main paper / reference: TSE, D.; VISWANATH, P. Fundamentals of Wireless Communic
 
 Language: Python3
 
-Slide: https://docs.google.com/presentation/d/1z3Sb4xVYEOk6fhB9vtsaUwbogzc4K8G5f5dTTfcNSDQ/edit?usp=sharing
+Slide: https://docs.google.com/presentation/d/1UrJd8UPdzVcsF__HWQhAyjp7uVlQzVW4bZT1f6N0IL8/edit?usp=sharing
 
 # Dependency
 
