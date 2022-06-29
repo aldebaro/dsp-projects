@@ -53,3 +53,7 @@ Default Parameters : `--sf './test_signals/ground_truth/crescent_decrescent/musi
 
 - A generative model and a generalized trust region Newton method for noise reduction. Computational Optimization and Applications. Pulkkinen, Seppo & Mäkelä, Marko & Karmitsa, Napsu. 57. 129-165. 10.1007/s10589-013-9581-4. (2014).
 
+- Short Time Fourier Transform using Python and Numpy, 2014. Available in: <https://kevinsprojects.wordpress.com/2014/12/13/short-time-fourier-transform-using-python-and-numpy/>
+
+- How to Play Music Using Mathematics in Python, 2020. Available in: <https://towardsdatascience.com/mathematics-of-music-in-python-b7d838c84f72/> 
+
