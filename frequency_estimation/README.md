@@ -8,8 +8,8 @@ Main paper: T. J. Gardner and M. O. Magnasco, "Sparse time-frequency representat
 
 Main dataset: 
 
-* Radek: https://github.com/earthspecies/spectral_hyperresolution/tree/main/data
-* Maggie: https://github.com/maggie-jiayizhang/hyper_resolution_spectrogram/tree/main/test_audio
+* Radek Osmulski: https://github.com/earthspecies/spectral_hyperresolution/tree/main/data
+* Maggie Zhang: https://github.com/maggie-jiayizhang/hyper_resolution_spectrogram/tree/main/test_audio
 * Ground Truth: https://github.com/weeping-angel/Mathematics-of-Music
 
 Original code: https://github.com/earthspecies/spectral_hyperresolution.
