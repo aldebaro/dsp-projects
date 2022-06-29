@@ -4,11 +4,17 @@ Analyze and reconstruct sparse time-frequency signals that are added to dense si
 
 # Basic information about the project
 
-Main paper: Sparse time-frequency representations by Timothy J. Gardner and Marcelo O. Magnasco / reference: T. J. Gardner and M. O. Magnasco, "Sparse time-frequency representations", Proc. Nat. Acad. Sci. USA, vol. 103, no. 16, pp. 6094-6099, 2006.
+Main paper: T. J. Gardner and M. O. Magnasco, "Sparse time-frequency representations", Proc. Nat. Acad. Sci. USA, vol. 103, no. 16, pp. 6094-6099, 2006.
 
-Main dataset: https://github.com/earthspecies/spectral_hyperresolution/tree/main/data
+Main dataset: 
 
-Original code: https://github.com/earthspecies/spectral_hyperresolution.
+* Radek Osmulski: https://github.com/earthspecies/spectral_hyperresolution/tree/main/data
+* Maggie Zhang: https://github.com/maggie-jiayizhang/hyper_resolution_spectrogram/tree/main/test_audio
+* Ground Truth: https://github.com/weeping-angel/Mathematics-of-Music
+
+Original code: 
+* Radek Osmulski: https://github.com/earthspecies/spectral_hyperresolution
+* Maggie Zhang: https://github.com/maggie-jiayizhang/hyper_resolution_spectrogram
 
 Language: Jupyter notebook in Python and Matlab.
 
@@ -34,6 +40,14 @@ The last line command of cell 4 should be changed from "waveplot" to "waveshow".
 
 Also, you need to run the next cells with the CPU instead of CUDA, so you have to change the last parameter of the last row from cell eight onwards to 'cpu'.
 
+### Steps to run the code present at: https://github.com/maggie-jiayizhang/hyper_resolution_spectrogram
+
+Open the directory of code and pass the comand:
+
+`python3 example.py --data_dir your_dir`
+
+Where the *your_dir* is the data folder.
+
 # Credits
 
 06/20/2022 - Marcos Davi Lima da Silva - https://github.com/marcossilva1309
@@ -43,3 +57,5 @@ Also, you need to run the next cells with the CPU instead of CUDA, so you have t
 Sparse time-frequency representations by Timothy J. Gardner and Marcelo O. Magnasco / reference: T. J. Gardner and M. O. Magnasco, "Sparse time-frequency representations", Proc. Nat. Acad. Sci. USA, vol. 103, no. 16, pp. 6094-6099, 2006.
 
 Patterson RD. A pulse ribbon model of monaural phase perception. J Acoust Soc Am. 1987 Nov;82(5):1560-86. doi: 10.1121/1.395146. PMID: 3693696.
+
+Flandrin, Patrick, Francois Auger, and Eric Chassande-Mottin. "Time-frequency reassignment: from principles to algorithms." Applications in time-frequency signal processing. CRC Press, 2018. 179-204.

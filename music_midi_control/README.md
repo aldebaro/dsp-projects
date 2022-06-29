@@ -20,6 +20,8 @@ Original code: https://github.com/magenta/midi-ddsp
 
 Language: Python
 
+Slides: https://docs.google.com/presentation/d/1JXDJjhR0GmSPnvvARQUt-aB9B7_qm58YxVh7aZ_whK0/edit#slide=id.g135e9d7f47b_0_13
+
 # Installation
 
 Instructions for installing

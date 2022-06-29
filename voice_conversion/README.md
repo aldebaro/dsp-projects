@@ -16,20 +16,84 @@ Language: Python
 
 # Installation
 
-pip install librosa
+`pip install librosa==0.8.1`
 
-pip install tqdm
+`pip install matplotlib==3.4.2`
 
-pip install webrtcvad
+`pip install numpy==1.21.1`
+
+`pip install scikit_learn==0.24.2`
+
+`pip install scipy==1.7.1`
+
+`pip install scikit-image`
+
+`pip install soundfile==0.10.3.post1`
+
+`pip install torch==1.9.0+cu111` 
+
+`pip install torchvision==0.10.0+cu111`
+
+`pip install torchaudio==0.9.0`
+
+`pip install tqdm==4.62.0`
+
+`pip install webrtcvad==2.0.10`
+
+`pip install nnmnkwii`
+
+`pip install matplotlib`
+
+
 
 # Executing / performing basic analysis
 
-Provide information on how to execute the main code, how to obtain results, etc. Provide the name of the main scripts.
+First of all, a paper was selected from github which it has the codes in python. Downloading files were saved in .zip and uploaded on the server generated on the google cloud platform, where the debian distribution was being simulated.
+
+Use the `unzip` command to unzip the `voice_conversion-master.zip` and `wavenet_vocoder-master.zip`
+
+command: `unzip [name].zip`
+
+After unzipping the folders with the codes, then the dataset `flickr_audio.zip` was uploaded to the server (this might take few hours)
+
+The enviroment must be structured as follow: `flickr_audio` `voice_conversion-master` `wavenet_vocoder-master`
+
+Enviroment ready, the next step is use the preprocess/train/inference codes present in voice_conversion-master:
+- Preprocess: `python preprocess.py --dataset [path/to/dataset] --test-size [float] --eval-size [float]`
+
+- Training: `python train.py --model_name [name]  --dataset [path/to/dataset] --n_cpu 4`
+
+- Inference: `python inference.py --model_name [name of the model] --epoch [epoch number] --trg_id [1 or 2] --wav [path/to/source_audio.wav]` or `--wavdir path/to/audio_directory`
+
+# Possible solutions if there are problems installing nnmnkwii library
+
+1st case:    `pip install nnmnkwii` or `python3 -m pip install nnmnkwii`
+
+2nd case:    `sudo apt install git-all` (DEBIAN)
+
+              pip install git+https://github.com/r9y9/nnmnkwii 
+             
+3rd Case:    `pip -v --no-cache-dir install nnmnkwii`
+
+
+4th Case:    `pip install numpy / python3 -m pip install numpy`
+
+             `pip install cython / python3 -m pip install cython`
+
+5th Case:    `pip install nnmnkwii==0.1.0`
+
+Feedback: none of this possible solution worked in the present work. This library was supposed to be used in separate wavenet training.
 
 # Credits
 
-14/06/2022 - Tatiane Ferraz Balbinot - your github URL
+14/06/2022 - Tatiane Ferraz Balbinot - https://github.com/AneBalbinot
 
 # References
 
-The main references you used
+Main reference: https://github.com/ebadawy/voice_conversion
+
+Auxiliary reference: https://github.com/RussellSB/tt-vae-gan
+
+WaveNet VoCoder source: https://github.com/r9y9/wavenet_vocoder 
+
+Dataset: https://groups.csail.mit.edu/sls/downloads/flickraudio/downloads.cgi

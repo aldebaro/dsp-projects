@@ -32,12 +32,11 @@ def ak_fftmtx(N, option=1):
     return Ah, A
 
 class ULA:
-    def __init__(self, Na, phi, normDistance, ph0, w, r_array):
+    def __init__(self, Na, phi, normDistance, ph0, r_array):
         self.phi = phi
         self.Na = Na
         self.normDistance = normDistance
         self.ph0 = ph0
-        self.w = w
         self.r_array = r_array
 
     def cos_gamma(self, phi = np.linspace(-np.pi,np.pi,1000), theta = np.pi/2):
@@ -108,10 +107,14 @@ class ULA:
         else:
             plt.polar(phi.T,np.absolute(self.arrayfactorULA[:,:,ind-1]))
             plt.show()
+    
+    def get_los_geometric_channel(self, a):
+        wsteer = self.steeringweightsULA()
+        h = a * np.exp(-1j * 2 * np.pi * self.normDistance) * np.transpose(wsteer[np.newaxis, :])
+        return h
 
-
+######### Parameters #########
 Na=8 #num antennas
-Npointing=4 # num of pointing angles
 
 N=1000 #grid resolution
 phi=np.linspace(-np.pi,np.pi,N) #angles
@@ -119,24 +122,18 @@ phi=phi[np.newaxis, :]
 
 d=1
 lambdac=2
-normDistance=d/lambdac
-# angleWithArrayNormal=0
+normDistance=d/lambdac # distance between the antennas
 r_array = 3
 
-w = 1#np.ones(Na)
-
 RxPos = np.array([5, np.pi/4]) # RxPos[0]: Module       RxPos[1]: Angle in rad
-#RxPos_angle = np.angle(RxPos[0]+1j*RxPos[1])
-pointingAngle = RxPos[1]#RxPos_angle
-a = 1
+pointingAngle = RxPos[1]
+a = 1 # Gain
 
-test1 = ULA(Na, phi, normDistance, pointingAngle, w, r_array)
-steeringvectors = test1.steeringvectorsForULA()
-steeringWeights = test1.steeringweightsULA()
+######### Create my Class #########
+test1 = ULA(Na, phi, normDistance, pointingAngle, r_array)
+
+######### Plot arrayfactor #########
 arrayfactor = test1.arrayfactor()
-phi2=np.linspace(-np.pi,np.pi,N)
-
-h = a * np.exp(-1j * 2 * np.pi * d / lambdac) * np.transpose(arrayfactor)
 
 # Points to draw RxPos and TxPos on the graph
 RxPos_Module = RxPos[0]
@@ -150,14 +147,19 @@ fig = plt.figure(figsize=(15,15))
 ax = fig.add_subplot(projection='polar')
 
 # Draw the array
-ax.plot(Tx_angle, Tx_module, '--bo')
+ax.plot(Tx_angle, Tx_module, '--bo', label='Transmit array')
 
 # Draw Receptor
-ax.plot(RxPos_angle, RxPos_Module, 'o', color = 'b')
+ax.plot(RxPos_angle, RxPos_Module, 'o', color = 'y', label='Rx position')
 
 # Draw Beamforming
-ax.plot(phi2.T, np.absolute(h))
+ax.plot(phi.T, np.absolute(arrayfactor))
+ax.legend()
 plt.show()
 
-#test2 = ULA(Na, phi, normDistance, poitingAngle, w, r_array)
-#test2.PlotCodeBook(ak_fftmtx, Na)
+
+######### Get LOS channel #########
+h_LOS = test1.get_los_geometric_channel(a)
+
+print('Channel matrix:')
+print(h_LOS)
