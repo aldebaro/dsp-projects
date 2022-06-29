@@ -30,8 +30,35 @@ matplotlib
 scipy
 opencv-python==4.2.0.32
 
+```bash
+git clone https://github.com/sczhou/STFAN.git
+```
 
+Crete the virtuaenv with python2
+```bash
+mkvirtualenv -p python2.7 pds
+```
 
+```bash
+pip install matplotlib easydict scipy
+pip install opencv-python==4.2.0.32
+pip install torch===1.0.1+cpu -f https://download.pytorch.org/whl/torch_stable.html
+pip install enum34 unique typing
+```
+
+```bash
+pip install git+https://github.com/jamesbowman/openexrpython.git
+pip install pyexr
+pip install torch===1.5.0+cpu -f https://download.pytorch.org/whl/torch_stable.html
+pip install tensorboardX=='2.0'
+```
+
+### To-do
+add informations about code modification
+
+```bash
+python runner.py  --phase 'test'  --weights './ckpt/best-ckpt.pth.tar'   --data './dataset_root' --out './output'
+```
 
 
 # Executing / performing basic analysis
