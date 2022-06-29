@@ -31,7 +31,7 @@ def viz(x, Tf, ridge_idxs, yticks=None, tt = 'Signal', yl = 'Frequency Scale'):
     ylabel = (yl)
     title = (tt)
     ikw = dict(abs=1, cmap='turbo', title=title)
-    pkw = dict(linestyle='--', color='r', xlabel="Time [samples]", ylabel=ylabel, xlims=(0, Tf.shape[1]))
+    pkw = dict(linestyle='--', color='k', xlabel="Time [samples]", ylabel=ylabel, xlims=(0, Tf.shape[1]))
     imshow(Tf, **ikw, show=0)
     plot(ridge_idxs, **pkw, show=1)
 
