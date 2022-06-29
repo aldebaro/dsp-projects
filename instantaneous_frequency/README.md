@@ -24,15 +24,21 @@ Run `setup.py` to install the libraries and the test_signals dataset.
 
 - `ridge_generated_signals_ssq.py` - This script generates three cossenoid based signals, and it's respectives ground truth frequencies. Ridge curves are extracted from each signal then evaluated with the mean squared error metric.
 
-Input Parameters: --p 'penalty for frequency change'
+Usage: `ridge_generated_signals_ssq.py --p penalty_for_frequency_change`
+
+Default Parameters : `--p 100`
 
 - `ridge_visualization_only.py` - This script plots ridge curves visualization of a loaded .wav signal.
 
-Input Parameters: --sf 'path_to_file.wav' --p 'penalty for frequency change' --nr 'number of ridges'
+Usage: `ridge_visualization_only.py --sf 'path_to_file.wav' --p penalty_for_frequency_change --nr number_of_ridges`
+
+Default Parameters : `--sf './test_signals/visualization/dolphins/SanctSound_CI01_03_dolphins_20190904T064203Z.wav' --p 60000 --nr 3`
 
 - `ridge_with_ground_truth.py` - This script plots and extracts a single ridge curve of a loaded .wav signal. The ridge extracted is evaluated with the original frequencies of the loaded signal (ground truth) using the mean squared error metric.
 
-Input Parameters: --sf 'path_to_file.wav' --ff 'path_to_ground_truth_file.npy' --p 'penalty for frequency change'
+Usage: `ridge_with_ground_truth.py --sf 'path_to_file.wav' --ff 'path_to_ground_truth_file.npy' --p penalty_for_frequency_change`
+
+Default Parameters : `--sf './test_signals/ground_truth/crescent_decrescent/music.wav' --ff './test_signals/ground_truth/crescent_decrescent/music_f.npy' --p 10`
 
 
 # Credits
