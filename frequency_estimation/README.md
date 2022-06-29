@@ -12,7 +12,9 @@ Main dataset:
 * Maggie Zhang: https://github.com/maggie-jiayizhang/hyper_resolution_spectrogram/tree/main/test_audio
 * Ground Truth: https://github.com/weeping-angel/Mathematics-of-Music
 
-Original code: https://github.com/earthspecies/spectral_hyperresolution.
+Original code: 
+* Radek Osmulski: https://github.com/earthspecies/spectral_hyperresolution
+* Maggie Zhang: https://github.com/maggie-jiayizhang/hyper_resolution_spectrogram
 
 Language: Jupyter notebook in Python and Matlab.
 
