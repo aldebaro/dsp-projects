@@ -32,12 +32,11 @@ def ak_fftmtx(N, option=1):
     return Ah, A
 
 class ULA:
-    def __init__(self, Na, phi, normDistance, ph0, w, r_array):
+    def __init__(self, Na, phi, normDistance, ph0, r_array):
         self.phi = phi
         self.Na = Na
         self.normDistance = normDistance
         self.ph0 = ph0
-        self.w = w
         self.r_array = r_array
 
     def cos_gamma(self, phi = np.linspace(-np.pi,np.pi,1000), theta = np.pi/2):
@@ -110,24 +109,12 @@ class ULA:
             plt.show()
     
     def get_los_geometric_channel(self, a):
-        self.arrayfactorULA = self.arrayfactor()
-        h = a * np.exp(-1j * 2 * np.pi * self.normDistance) * np.transpose(self.arrayfactorULA)
+        wsteer = self.steeringweightsULA()
+        h = a * np.exp(-1j * 2 * np.pi * self.normDistance) * np.transpose(wsteer[np.newaxis, :])
         return h
-
-    def CorrelatedComplexNoiseGenerator(self, covMat):
-        D,V = np.linalg.eig(covMat)
-        self.corrMat = V * np.sqrt(D)
-        return self
-    
-    def generate(self, nSamples):
-        d = np.shape(self.corrMat)[0]
-        complexNoise1D = np.sqrt(0.5) * np.matmul(np.random.randn(d * nSamples, 2), np.array([1, 1j]))
-        r = np.matmul(self.corrMat, complexNoise1D.reshape((d, nSamples)))
-        return r
 
 ######### Parameters #########
 Na=8 #num antennas
-Npointing=4 # num of pointing angles
 
 N=1000 #grid resolution
 phi=np.linspace(-np.pi,np.pi,N) #angles
@@ -138,18 +125,15 @@ lambdac=2
 normDistance=d/lambdac # distance between the antennas
 r_array = 3
 
-w = 1#np.ones(Na)
-
 RxPos = np.array([5, np.pi/4]) # RxPos[0]: Module       RxPos[1]: Angle in rad
 pointingAngle = RxPos[1]
 a = 1 # Gain
 
 ######### Create my Class #########
-test1 = ULA(Na, phi, normDistance, pointingAngle, w, r_array)
+test1 = ULA(Na, phi, normDistance, pointingAngle, r_array)
 
 ######### Plot arrayfactor #########
 arrayfactor = test1.arrayfactor()
-phi2=np.linspace(-np.pi,np.pi,N)
 
 # Points to draw RxPos and TxPos on the graph
 RxPos_Module = RxPos[0]
@@ -169,7 +153,7 @@ ax.plot(Tx_angle, Tx_module, '--bo', label='Transmit array')
 ax.plot(RxPos_angle, RxPos_Module, 'o', color = 'y', label='Rx position')
 
 # Draw Beamforming
-ax.plot(phi2.T, np.absolute(arrayfactor))
+ax.plot(phi.T, np.absolute(arrayfactor))
 ax.legend()
 plt.show()
 
@@ -177,37 +161,5 @@ plt.show()
 ######### Get LOS channel #########
 h_LOS = test1.get_los_geometric_channel(a)
 
-######### Get channel with correlation #########
-# time
-N = 10**5
-
-# covariance matrix
-dimension = 4
-corrMat = np.random.randn(dimension, dimension) + 1j * np.random.randn(dimension, dimension)
-R_bcu = np.matmul(corrMat, corrMat.conj().T)
-
-#noise generator
-corrNoiseGen = test1.CorrelatedComplexNoiseGenerator(R_bcu)
-
-channelsOverTime = np.zeros((dimension, N), dtype=complex) 
-
-#initial channel at t = 1
-chan = corrNoiseGen.generate(1)
-channelsOverTime[:,0] = chan[:,0]
-
-alpha = 0.5
-corrNoiseGen = test1.CorrelatedComplexNoiseGenerator( (1 - alpha**2) * R_bcu)
-
-for t in range(1, N):
-    channelsOverTime[:,t] = alpha * channelsOverTime[:, t-1] + corrNoiseGen.generate(1)[:,0]
-
-print('estimated covariance matrix ')
-R_estimated = np.matmul(channelsOverTime, channelsOverTime.conj().T) / N
-print(R_estimated)
-
-print('true covarience matrix')
-print(R_bcu)
-
-print('difference between the matrices')
-dif = R_bcu-R_estimated
-print(dif)
+print('Channel matrix:')
+print(h_LOS)
