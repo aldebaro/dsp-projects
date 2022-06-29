@@ -16,9 +16,13 @@ Slide: https://docs.google.com/presentation/d/1z3Sb4xVYEOk6fhB9vtsaUwbogzc4K8G5f
 
 # Dependency
 
-* Python >= 3.8.10
-* pip >= 22.1.2
-* virtualenv==20.13.3
+## System
+
+* Python >= 3.9.0
+* pip >= 21.2.4
+* conda >= 4.12.0
+
+# Libraries
 * keras==2.9.0
 * tensorflow==2.9.1
 * scikit-learn==1.1.1
@@ -31,20 +35,59 @@ Slide: https://docs.google.com/presentation/d/1z3Sb4xVYEOk6fhB9vtsaUwbogzc4K8G5f
 * Flask==2.1.2
 * gevent==21.12.0
 * werkzeug==2.1.2
+* wget==3.2
+* joblib==1.1.0
+* skorch==0.11.0
+* tensorboard==2.9.1
+* PyWavelets==1.3.0
+* opencv-contrib-python==4.6.0.66
+* torch==1.12.0
 
 # Installation and Execution
 
-To facilitate code execution, it is recommended to use a virtual environment for Python.
+To facilitate code execution, it is recommended to use a conda virtual environment for Python.
 
+Create and activate a conda environment with the following commands
 ```
-$ sudo pip3 install virtualenv
-$ virtualenv venv_ecg
-$ source venv_ecg/bin/activate
-(venv_ecg) $ git clone https://github.com/aldebaro/dsp-projects.git
-(venv_ecg) $ cd ecg_mitbih_classification/
-(venv_ecg) $ pip install -r requirements.txt
-(venv_ecg) $ python src/data.py --downloading True
-(venv_ecg) $ python src/train.py
+(base) $ conda create -n ecg python==3.9
+(base) $ conda activate ecg
+```
+
+Inside the conda environment created, install PyTorch with the appropriated command below
+
+If you have a dedicated GPU, use the command:
+```
+(ecg) $ conda install pytorch torchvision torchaudio cudatoolkit=10.2 -c pytorch
+```
+
+If you don't have a dedicated GPU, use the command:
+```
+(ecg) $ conda install pytorch torchvision torchaudio cpuonly -c pytorch
+```
+
+Clone the repository and enter on the ecg_mitbih_classification folder
+```
+(ecg) $ git clone https://github.com/aldebaro/dsp-projects.git
+(ecg) $ cd ecg_mitbih_classification/
+```
+
+Install required libraries with the following command
+```
+(ecg) $ pip install -r requirements.txt
+```
+
+To generate results without Wavelet Transform use the following commands
+```
+(ecg) $ cd not_using_wavelet_transform/
+(ecg) $ python data.py --downloading True
+(ecg) $ python train.py
+```
+
+To generate results with Wavelet Transform use the following commands
+```
+(ecg) $ cd using_wavelet_transform/
+(ecg) $ python preprocessing.py
+(ecg) $ python trained.py
 ```
 
 # Credits
