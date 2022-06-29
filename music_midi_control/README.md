@@ -1,18 +1,39 @@
-# Title of your project
+# MIDI-DDSP: Detailed Control of Musical Performance via Hierarchical Modeling
 
-Brief description of your project, indicating its goal
+Implement a hierarchical generative model of musical performance to
+provide both realism and control. Similar to conventional synthesizers and samplers
+that use the MIDI standard, MIDI-DDSP converts note timing, pitch, and
+expression information into fine-grained parameter control of DDSP synthesizer modules.
+The hierarchical structure underlying the process of creating music involves a
+composer writing a piece as a series of notes. A performer interprets these notes through a myriad of
+nuanced, sub-second choices about articulation, dynamics, and expression. These expressive gestures are realized as audio through the short-time pitch and timbre changes of the physical vibration
+of the instrument. MIDI-DDSP is built on a similar 3-level hierarchy (notes, performance, synthesis)
+with interpretable representations at each level.
 
 # Basic information about the project
 
-Main paper / reference: full reference
+Main paper / reference: Wu, Y., Manilow, E., Deng, Y., Swavely, R., Kastner, K., Cooijmans, T., Courville,A., Huang, C., & Engel, J. (2021). MIDI-DDSP: Detailed control of musical performance via hierarchical modeling. arXiv preprint arXiv:2112.09312.
 
-Main dataset: full reference to the dataset (name, URL, etc.)
+Main dataset: Creating a multi-track classical music performance dataset for multi-modal music analysis: challenges, insights, and applications, https://datadryad.org/stash/dataset/doi:10.5061/dryad.ng3r749
 
-Original code: 
+Original code: https://github.com/magenta/midi-ddsp
+Language: python
 
-Language: Jupyter notebook in Python or Matlab etc (include version, etc)
+Slides: https://docs.google.com/presentation/d/1JXDJjhR0GmSPnvvARQUt-aB9B7_qm58YxVh7aZ_whK0/edit#slide=id.g135e9d7f47b_0_13
 
 # Installation
+
+Can be installed with:
+
+pip install midi-ddsp
+
+You can, then, try on a example MIDI from your directory
+
+midi_ddsp_download_model_weights
+midi_ddsp_synthesize --midi_path <path-to-midi>
+  
+You can also try a colab notebook demo available at: https://colab.research.google.com/github/magenta/midi-ddsp/blob/main/midi_ddsp/colab/MIDI_DDSP_Demo.ipynb
+
 
 Instructions for installing
 
@@ -22,8 +43,8 @@ Provide information on how to execute the main code, how to obtain results, etc.
 
 # Credits
 
-date - your name - your github URL
+15/06/2022 Frederico Lopes https://github.com/fredhrl
 
 # References
 
-The main references you used
+Wu, Yusong, et al. "MIDI-DDSP: Detailed control of musical performance via hierarchical modeling." arXiv preprint arXiv:2112.09312 (2021).
