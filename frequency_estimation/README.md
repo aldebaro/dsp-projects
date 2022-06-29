@@ -6,7 +6,11 @@ Analyze and reconstruct sparse time-frequency signals that are added to dense si
 
 Main paper: T. J. Gardner and M. O. Magnasco, "Sparse time-frequency representations", Proc. Nat. Acad. Sci. USA, vol. 103, no. 16, pp. 6094-6099, 2006.
 
-Main dataset: https://github.com/earthspecies/spectral_hyperresolution/tree/main/data
+Main dataset: 
+
+* Radek: https://github.com/earthspecies/spectral_hyperresolution/tree/main/data
+* Maggie: https://github.com/maggie-jiayizhang/hyper_resolution_spectrogram/tree/main/test_audio
+* Ground Truth: https://github.com/weeping-angel/Mathematics-of-Music
 
 Original code: https://github.com/earthspecies/spectral_hyperresolution.
 
