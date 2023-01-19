@@ -21,6 +21,8 @@ Language: Python 3
 
 # Installation and Execution
 
+To use this codes, put your dataset folder one directory before the current code directory and name it "DataSet"
+To use "create_pngs.py" you need to use one command line argument: -o foldername or --output foldername, ex.: -o images
 
 # Credits
 
