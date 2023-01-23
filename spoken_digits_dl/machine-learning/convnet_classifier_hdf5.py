@@ -66,12 +66,6 @@ def train_and_test(X_train, y_train, X_test, y_test, num_rows, num_columns, outp
     #install graphviz: sudo apt-get install graphviz and then pip install related packages
     #plot_model(model, to_file='classification_model.png', show_shapes = True)
 
-    # compile model.
-    #model.compile(loss='mean_squared_error',
-    #              optimizer=Adagrad(),
-    #              metrics=['accuracy','mae'])
-    #model.load_weights('/nethome/pinheirs/Documents/papi/easyspeech/mots8/spectrogram_copy/save_at_{epoch}.h5')
-
     #about early stopping: https://keras.io/api/callbacks/early_stopping/
     callbacks = [
         #tf.keras.callbacks.EarlyStopping(monitor='loss', patience=100, verbose=1, restore_best_weights=True)

@@ -38,7 +38,7 @@ OUTPUT_DIR= "../outputs/" + EXPERIMENT_ID #output folder (will be created) to st
 if True: #True if it is the first time you run the frontend
     OUTPUT_ID= FEATURES + "D" + str(D) + "T" + str(T)
     #list with all commands you want to execute from the list all_scripts to be defined below
-    all_scripts_indices = [3,4,5,6,7] #execute all commands
+    all_scripts_indices = [0,1,2,3,4,5,6,7] #execute all commands
     #all_scripts_indices = [7] #execute only command 7
 else: #In case you have already executed the frontend and cut features
     #with signal_statistics.py to find Dmin and Dmax and later use cut_frequencies.py

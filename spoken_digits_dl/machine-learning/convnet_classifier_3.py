@@ -36,7 +36,7 @@ batch_size = 1
 dropout_probability = 0.01 #to combat overfitting
 
 train_ds = tf.keras.preprocessing.image_dataset_from_directory(
-    "/nethome/pinheirs/Documents/papi/easyspeech/mots8/spectrogram_copy/train",
+    "/main_folder/train",
     validation_split=0.2,
     subset="training",
     seed=1337,
@@ -44,7 +44,7 @@ train_ds = tf.keras.preprocessing.image_dataset_from_directory(
     batch_size=batch_size,
 )
 val_ds = tf.keras.preprocessing.image_dataset_from_directory(
-    "/nethome/pinheirs/Documents/papi/easyspeech/mots8/spectrogram_copy/test",
+    "/main_folder/test",
     validation_split=0.2,
     subset="validation",
     seed=1337,
