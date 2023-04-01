@@ -40,7 +40,7 @@ print(x_q)
 print(np.unique(x_q))
 
 # save to binary file with little-endian samples
-filename = "test.bin"
+filename = "test_float_little_endian.bin"
 x_q.tofile(filename)
 
 # read from file and check if consistent
