@@ -1,6 +1,6 @@
 # Project guidelines
 
-The guidelines can be found at file: 
+The guidelines can be found at the provided file.
 
 # Installation
 
@@ -10,7 +10,7 @@ Do not forget you need to install lasse-py.
 
  1) git clone it from https://github.com/lasseufpa/lasse-py
 
- 2) download directly
+ 2) download directly using github menu
 
 ## Then you need to install it with
 
