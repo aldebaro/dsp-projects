@@ -11,7 +11,7 @@ show_plot = True  # to show plots
 # define number of bits
 # each double number is represented by 8 bytes, that is 8*8 = 64 bits
 num_bits_to_create_signal = 3
-num_bits = 7  # Number of bits for the quantizer
+num_bits = 4  # Number of bits for the quantizer
 original_num_bits = 64  # original number of bits per sample in original file
 
 signal_type = 1  # identifier for this signal
