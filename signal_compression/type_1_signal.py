@@ -10,7 +10,6 @@ show_plot = True  # to show plots
 
 # define number of bits
 # each double number is represented by 8 bytes, that is 8*8 = 64 bits
-num_bits_to_create_signal = 3
 num_bits = 4  # Number of bits for the quantizer
 original_num_bits = 64  # original number of bits per sample in original file
 
@@ -34,7 +33,7 @@ xmin = np.min(x_unquantized)
 xmax = np.max(x_unquantized)
 
 # design quantizer
-quantizer = UniformQuantizer(num_bits_to_create_signal, xmin, xmax, forceZeroLevel=False)
+quantizer = UniformQuantizer(num_bits, xmin, xmax, forceZeroLevel=False)
 
 # quantize (obtain quantized values) to generate original signal
 x_original, temp_i = quantizer.quantize_numpy_array(x_unquantized)

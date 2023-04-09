@@ -1,6 +1,8 @@
 '''
 Signal corresponds to upsampled random Gaussian noise, such 
-that it does not occupy the whole frequency band. MSE is zero.
+that it does not occupy the whole frequency band. 
+But we do not benefit from resampling, and work with the 
+original sampling frequency to achieve a MSE equals zero.
 '''
 
 from numpy.random import normal
@@ -18,7 +20,7 @@ original_num_bits = 64  # original number of bits per sample in original file
 
 signal_type = 3  # identifier for this signal
 
-initial_Fs = 800   # define initial sampling frequency (Hz)
+initial_Fs = 800.0   # define initial sampling frequency (Hz)
 
 #resample factors
 up = 4
@@ -46,5 +48,6 @@ quantizer = UniformQuantizer(num_bits, xmin, xmax, forceZeroLevel=False)
 # quantize (obtain quantized values) to generate original signal
 x_original, temp_i = quantizer.quantize_numpy_array(x_unquantized)
 
+print('Initial sampling frequency (Hz) =', initial_Fs)
 # execute all stages in pipeline
 processing_pipeline(x_original, Fs, num_bits, signal_type, original_num_bits, show_plot=show_plot)

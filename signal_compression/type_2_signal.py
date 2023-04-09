@@ -3,7 +3,6 @@ Signal corresponds to random Gaussian noise.
 '''
 
 from numpy.random import normal
-import numpy as np
 from lasse.dsp.scalar_quantization import UniformQuantizer
 from compress_decompress import processing_pipeline
 
@@ -14,7 +13,7 @@ show_plot = True  # to show plots
 num_bits = 5  # Number of bits for the quantizer
 original_num_bits = 64  # original number of bits per sample in original file
 
-signal_type = 1  # identifier for this signal
+signal_type = 2  # identifier for this signal
 
 Fs = 800   # define sampling frequency (Hz)
 Ts = 1.0/Fs  # sampling interval (s)

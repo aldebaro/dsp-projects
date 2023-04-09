@@ -30,6 +30,16 @@ def processing_pipeline(x_original, Fs, num_bits, signal_type, original_num_bits
     '''
     Pipeline without downsampling.
     '''
+    # properly cast the original signal
+    if original_num_bits == 64:
+        x_original = x_original.astype(np.float64)
+    elif original_num_bits == 16:
+        x_original = x_original.astype(np.float16)
+    elif original_num_bits == 128:
+        x_original = x_original.astype(np.float128)
+    else:
+        raise Exception(str(original_num_bits) + " is not accepted as the original_num_bits!")
+
     # define file names
     original_file_name = 'original_' + str(signal_type) + '.double'
     compressed_file_name = 'compressed_' + str(signal_type) + '.' + str(num_bits) + 'bits'
@@ -75,26 +85,31 @@ def processing_pipeline(x_original, Fs, num_bits, signal_type, original_num_bits
     error_signal = x_original - x_reconstructed
     mse = np.mean(error_signal*error_signal)
 
+    # find dynamic range
+    xmin = np.min(x_original)
+    xmax = np.max(x_original)
+
     # print useful information
-    print("Signal duration in seconds", duration)
-    print("Sampling frequency", Fs)
-    print("# of signal samples", N)
-    print("# of unique values", num_unique)
-    print("unique_values", unique_values)
-    print('size_original_file=', size_original_file)
-    print('size_encoded_file=', size_encoded_file)
-    print('actual compression ratio (original/encoded)=', size_original_file / size_encoded_file)
-    print('theoretical compression ratio=', original_num_bits / num_bits)
-    print('dictionary amplitude_encoder=', amplitude_encoder)
-    print('x_encoded=', x_encoded)
-    print('compressed_bitstream=', compressed_bitstream)
-    print('x_encoded_from_file=', x_encoded_from_file)
-    print('Length of x_encoded=', len(x_encoded))
-    print('Length of compressed_bitstream=', len(compressed_bitstream))
-    print('Length of x_encoded_from_file=', len(x_encoded_from_file))
-    print('# of unique values in x_encoded=', len(np.unique(x_encoded)))
-    print('# of unique values in compressed_bitstream=', len(np.unique(compressed_bitstream)))
-    print('# of unique values in x_encoded_from_file=', len(np.unique(x_encoded_from_file)))
+    print("Signal duration in seconds =", duration)
+    print("Sampling frequency =", Fs)
+    print("Dynamic range:", xmin, "to", xmax)
+    print("# of signal samples =", N)
+    print("# of unique values =", num_unique)
+    print("unique_values =", unique_values)
+    print('size_original_file =', size_original_file)
+    print('size_encoded_file =', size_encoded_file)
+    print('actual compression ratio (original/encoded) =', size_original_file / size_encoded_file)
+    print('theoretical compression ratio =', original_num_bits / num_bits)
+    print('dictionary amplitude_encoder =', amplitude_encoder)
+    print('x_encoded =', x_encoded)
+    print('compressed_bitstream =', compressed_bitstream)
+    print('x_encoded_from_file =', x_encoded_from_file)
+    print('Length of x_encoded =', len(x_encoded))
+    print('Length of compressed_bitstream =', len(compressed_bitstream))
+    print('Length of x_encoded_from_file =', len(x_encoded_from_file))
+    print('# of unique values in x_encoded =', len(np.unique(x_encoded)))
+    print('# of unique values in compressed_bitstream =', len(np.unique(compressed_bitstream)))
+    print('# of unique values in x_encoded_from_file =', len(np.unique(x_encoded_from_file)))
     print('MSE =', mse)
 
     if show_plot:
@@ -121,13 +136,24 @@ def processing_pipeline_with_downsampling(x_original, Fs, num_bits, signal_type,
     Pipeline with downsampling: reducing the sampling frequency we need less
     bits to represent the information.
     '''
+
+    # properly cast the original signal
+    if original_num_bits == 64:
+        x_original = x_original.astype(np.float64)
+    elif original_num_bits == 16:
+        x_original = x_original.astype(np.float16)
+    elif original_num_bits == 128:
+        x_original = x_original.astype(np.float128)
+    else:
+        raise Exception(str(original_num_bits) + " is not accepted as the original_num_bits!")
+
     downsampling_factor = original_Fs / Fs
     if not (downsampling_factor == int(downsampling_factor)):
         raise Exception("Downsampling factor must be an integer! I found: " + str(downsampling_factor))
 
     # define file names
     original_file_name = 'original_' + str(signal_type) + '.double'
-    compressed_file_name = 'compressed_' + str(signal_type) + 'down' + str(downsampling_factor) + '.' + str(num_bits) + 'bits'
+    compressed_file_name = 'compressed_' + str(signal_type) + '_down' + str(int(downsampling_factor)) + '.' + str(num_bits) + 'bits'
 
     original_Ts = 1.0 / original_Fs  # sampling interval
     N_original = len(x_original)  # number of samples
@@ -192,24 +218,31 @@ def processing_pipeline_with_downsampling(x_original, Fs, num_bits, signal_type,
     signal_power = np.mean(x_original*x_original)
     sqnr = 10.0 * np.log10(signal_power / mse)
 
+    # find dynamic range
+    xmin = np.min(x_original)
+    xmax = np.max(x_original)
+
     # print useful information
-    print("Signal duration in seconds", duration)
-    print("Sampling frequency", Fs)
-    print("# of original signal samples", N_original)
-    print("# of final signal samples", N_downsampled)
-    print("# of unique values", num_unique)
-    print("unique_values", unique_values)
-    print('size_original_file=', size_original_file)
-    print('size_encoded_file=', size_encoded_file)
-    print('actual compression ratio (original/encoded)=', size_original_file / size_encoded_file)
-    print('theoretical compression ratio=', downsampling_factor * original_num_bits / num_bits)
-    print('dictionary amplitude_encoder=', amplitude_encoder)
+    print("Original signal duration in seconds", duration)
+    print("Original sampling frequency (Hz) =", original_Fs)
+    print("Downsampled sampling frequency =", Fs)
+    print("Downsampling factor =", downsampling_factor)
+    print("Dynamic range:", xmin, "to", xmax)
+    print("# of original signal samples =", N_original)
+    print("# of final signal samples =", N_downsampled)
+    print("# of unique values =", num_unique)
+    print("unique_values =", unique_values)
+    print('size_original_file =', size_original_file)
+    print('size_encoded_file =', size_encoded_file)
+    print('actual compression ratio (original/encoded) =', size_original_file / size_encoded_file)
+    print('theoretical compression ratio =', downsampling_factor * original_num_bits / num_bits)
+    print('dictionary amplitude_encoder =', amplitude_encoder)
     print('x_encoded=', x_encoded)
-    print('compressed_bitstream=', compressed_bitstream)
-    print('x_encoded_from_file=', x_encoded_from_file)
-    print('Length of x_encoded=', len(x_encoded))
-    print('Length of compressed_bitstream=', len(compressed_bitstream))
-    print('Length of x_encoded_from_file=', len(x_encoded_from_file))
+    print('compressed_bitstream =', compressed_bitstream)
+    print('x_encoded_from_file =', x_encoded_from_file)
+    print('Length of x_encoded =', len(x_encoded))
+    print('Length of compressed_bitstream =', len(compressed_bitstream))
+    print('Length of x_encoded_from_file =', len(x_encoded_from_file))
     print('# of unique values in x_encoded=', len(np.unique(x_encoded)))
     print('# of unique values in compressed_bitstream=', len(np.unique(compressed_bitstream)))
     print('# of unique values in x_encoded_from_file=', len(np.unique(x_encoded_from_file)))
@@ -231,6 +264,6 @@ def processing_pipeline_with_downsampling(x_original, Fs, num_bits, signal_type,
         #plt.show() is going to be called below
         plt.figure(4)
         if False:
-            power_spectral_density(x_reconstructed, Fs, show_plot=show_plot)
+            power_spectral_density(x_reconstructed, original_Fs, show_plot=show_plot)
         else:
-            spectrum_magnitude(x_reconstructed, Fs, show_plot=show_plot, remove_mean=True)            
+            spectrum_magnitude(x_reconstructed, original_Fs, show_plot=show_plot, remove_mean=True)            
