@@ -10,12 +10,14 @@ Do not forget you need to install lasse-py.
 
  1) git clone it from https://github.com/lasseufpa/lasse-py
 
+or
+
  2) download directly using github menu
 
 ## Then you need to install it with
 
 1) python setup.py install
 
-ou
+or
 
-2) Configuring PYTHONPATH to point to its folder (see setpath.bat for this task on Windows)
+2) Configuring PYTHONPATH to point to its folder (see setpath.bat for the command set on Windows)
