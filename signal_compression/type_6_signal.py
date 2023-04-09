@@ -15,7 +15,7 @@ show_plot = True  # to show plots
 # output file
 output_filename = "original_6.txt"
 
-# the file below must be generated first
+# the file below must be generated first, with python type_5_signal.py
 filename = "original_5.double"
 x_original = np.fromfile(filename, dtype=np.float64, count=-1)
 Fs = 8000.0   # define sampling frequency (Hz)
@@ -35,7 +35,14 @@ x_original_trended = np.zeros(x_original.shape)
 for i in range(N):
     x_original_trended[i] = x_original[i] + (i+2)
 
-print("x_original with trend =", x_original_trended)    
+print("x_original with trend =", x_original_trended)
+
+num_unique_values = len(np.unique(x_original_trended))
+print("Number of distinct values in signal with trend =", num_unique_values)  # Number of bits for the quantizer
+
+xmin = np.min(x_original_trended)
+xmax = np.max(x_original_trended)
+print("Dynamic range of signal with trend:", xmin, "to", xmax)
 
 np.savetxt(output_filename, x_original_trended, fmt='%.18f')
 print("Wrote file", output_filename)
